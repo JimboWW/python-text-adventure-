@@ -1,9 +1,6 @@
 from player import Player
 import world
 
-
-II 
- 
 def play():
     print("Escape from Cave Terror!")
     player = Player()
