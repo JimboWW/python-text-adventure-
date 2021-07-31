@@ -28,18 +28,18 @@ class VictoryTile(MapTile):
         Victory is yours!
         """
 class EnemyTile(MapTile):
-		def __init__( self, x, y, enemies ):
-			r = random.random()
-			if r < 0.50:
-				self.enemy = enemies.GiantSpider()
-			elif r < 0.80:
-					self.enemy = enemies.Ogre()
-			elif r < 0.95:
-					self.enemy = enemies.BatColony()
-			else:
-					self.enemy = enemies.RockMonster()
+    def __init__( self, x, y, enemies ):
+	r = random.random()
+	if r < 0.50:
+		self.enemy = enemies.GiantSpider()
+	elif r < 0.80:
+		self.enemy = enemies.Ogre()
+	elif r < 0.95:
+		self.enemy = enemies.BatColony()
+	else:
+		self.enemy = enemies.RockMonster()
 					
-			super().__init__( x, y )
+	super().__init__( x, y )
 
 def tile_at( x, y ):
 	if x < 0 or y < 0:
