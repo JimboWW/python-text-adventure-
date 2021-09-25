@@ -32,6 +32,4 @@ class BatColony(Enemy):
 
 class RockMonster(Enemy):
     def __init__(self):
-        self.name = "Rock Monster"
-        self.hp = 80
-        self.damage = 15
+        
