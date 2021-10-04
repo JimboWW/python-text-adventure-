@@ -1,28 +1,27 @@
-#page( text_display )    Version 1.09    9-25-21
-from os import system, name        
-
-class IntroScreen():
-    def __init__(self): self.name = "IntroScreen"        
+#page( text_display )    Version 1.10    10-3-21
+#name, hp, damage
+class Enemy:
+    def __init__(self): raise NotImplementedError("Don't create Enemy objects.")
     def __str__(self): return self.name
+    def is_alive(self): return self.hp > 0
 
-    @staticmethod
-    def title_text(): print("T h e    L a s t    T e x t    A d v e n t u r e\n")
-    @staticmethod 
-    def intro_text():       
-        #Intro test
-        with open( "player.txt", "r" ) as file: file = file.read()
-        if file == "":
-            name_ = input("Adventurer, tell us your name?")
-            print( "\nHello,", name_+"!\n" )
-            with open("player.txt", 'a') as file_:
-                file_.write("Hi "+name_+",\n" "Welcome back.\n")
-                file_.close()
-        elif file != "":
-            with open("player.txt", 'r') as file_:
-                print( file_.read() )
-                file_.close()
-                
-    @staticmethod 
-    def clear():
-        if name == 'Android':_ = system('cls')
-        else: _ = system('clear')
+class HorseFly(Enemy):
+    def __init__(self):
+        self.name = "Horse fly"
+        self.hp = 20
+        self.damage = 2
+class Rooster(Enemy):
+    def __init__(self):
+        self.name = "Rooster"
+        self.hp = 30
+        self.damage = 10
+class BeeSwarm(Enemy):
+    def __init__(self):
+        self.name = "Swarm of Bees"
+        self.hp = 100
+        self.damage = 4
+class MeanDog(Enemy):
+    def __init__(self):
+        self.name = "MeanDog"
+        self.hp = 80
+        self.damage = 15
